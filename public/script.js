@@ -1,12 +1,14 @@
 const io = window.io;
 const Peer = window.Peer;
 
-const socket = io('http://192.168.1.7:3000');
+const socket = io('https://10.3.50.127:4430');
 const videoGrid = document.getElementById('video-grid');
 
 const myPeer = new Peer(undefined, {
-    host: '192.168.1.7',
-    port: '3001'
+    host: '10.3.50.127',
+    port: '3001',
+    secure: true // Attempt secure connection (you might need to configure PeerJS separately for HTTPS/WSS)
+
 });
 
 const myVideo = document.createElement('video');
