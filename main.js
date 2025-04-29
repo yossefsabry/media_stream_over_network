@@ -1,3 +1,11 @@
+// TODO : FIX PROBLEM IN STREAM ON ANOHTER DEVICE
+//
+//
+//
+//
+//
+//
+
 import express from 'express';
 import https from 'https';
 import { Server as SocketIoServer } from 'socket.io';
@@ -20,6 +28,7 @@ const io = new SocketIoServer(httpsServer, {
     }
 });
 
+app.use('/peerjs', express.static('node_modules/peerjs/dist'));
 app.set("view engine", "ejs");
 app.use(express.static('public'));
 
